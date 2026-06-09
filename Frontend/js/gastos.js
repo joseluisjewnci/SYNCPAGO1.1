@@ -1,7 +1,3 @@
-// ============================
-// SYNCPAGO — GASTOS
-// Envuelto en IIFE para evitar conflicto de variables globales con historial.js
-// ============================
 
 (function () {
 
@@ -10,13 +6,10 @@
   const POR_PAGINA      = 8;
   let editingId         = null;
 
-  // ── STORAGE ──
-
   function guardarGastos() {
     localStorage.setItem("gastos", JSON.stringify(gastos));
   }
 
-  // ── ESTADO ──
 
   function getStatus(g) {
     if (g.estado === "Pagado") return { label: "Pagado", cls: "badge-green" };
@@ -33,8 +26,6 @@
       day: "2-digit", month: "short", year: "numeric"
     });
   }
-
-  // ── RENDER ──
 
   function renderGastos(lista) {
     lista = lista ?? gastos.filter(g => g.activo);
@@ -80,7 +71,6 @@
     document.getElementById("btn-next").disabled    = paginaActual === total;
   }
 
-  // ── FILTROS ──
 
   function filterGastos() {
     const texto     = (document.getElementById("search2")?.value || "").toLowerCase();
@@ -96,7 +86,6 @@
     renderGastos(lista);
   }
 
-  // ── PAGINACIÓN ──
 
   function changePage(dir) {
     const total = Math.max(1, Math.ceil(gastos.filter(g => g.activo).length / POR_PAGINA));
@@ -104,14 +93,12 @@
     renderGastos();
   }
 
-  // ── AGREGAR ──
 
   function addGasto() {
     const nombre = document.getElementById("new-nombre");
     const monto  = document.getElementById("new-monto");
     const fecha  = document.getElementById("new-fecha");
 
-    // Validación con clases de error
     let ok = true;
     [["ff-nombre", !nombre.value.trim()],
      ["ff-monto",  !monto.value || Number(monto.value) <= 0],
@@ -148,7 +135,6 @@
     showToast("Recibo agregado ✓");
   }
 
-  // ── EDITAR ──
 
   function openEdit(id) {
     editingId = id;
@@ -182,7 +168,6 @@
     showToast("Recibo actualizado ✓");
   }
 
-  // ── ELIMINAR (soft delete) ──
 
   function softDelete(id) {
     if (!confirm("¿Seguro que deseas eliminar este recibo?")) return;
@@ -196,7 +181,6 @@
     showToast("Recibo eliminado ✓");
   }
 
-  // ── MARCAR PAGADO / PENDIENTE ──
 
   function marcarPagado(id) {
     const g = gastos.find(x => x.id === id);
@@ -216,7 +200,6 @@
     showToast("Recibo marcado como pendiente ✓");
   }
 
-  // ── EXPONER AL SCOPE GLOBAL (necesario para onclick en HTML) ──
 
   window.addGasto       = addGasto;
   window.openEdit       = openEdit;
@@ -227,7 +210,6 @@
   window.filterGastos   = filterGastos;
   window.changePage     = changePage;
 
-  // ── INIT ──
 
   document.addEventListener("DOMContentLoaded", () => renderGastos());
 

@@ -1,6 +1,4 @@
-// dashboard.js
-// requireAuth() en auth.js ya puebla nombre/email en el DOM.
-// Este archivo solo calcula y muestra los KPIs del mes actual.
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -32,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
   set("kpi-pending", pendientes);
   set("kpi-overdue", vencidos);
 
-  // Sincronizar selector de moneda con valor guardado
   const sel = document.getElementById("currency-sel");
   if (sel) sel.value = getCurrency();
 });

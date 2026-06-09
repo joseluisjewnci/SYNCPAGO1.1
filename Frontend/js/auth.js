@@ -1,6 +1,4 @@
-// ======================
-// LOGIN
-// ======================
+
 
 async function login(email, password) {
   try {
@@ -17,7 +15,6 @@ async function login(email, password) {
       return;
     }
 
-    // Cuando el backend devuelva JWT real, usar: data.token
     localStorage.setItem("token", data.token || "usuario-autenticado");
     localStorage.setItem("user", JSON.stringify(data.usuario));
 
@@ -30,16 +27,13 @@ async function login(email, password) {
 }
 
 
-// ======================
-// REGISTRO
-// ======================
 
 async function register(name, email, phone, password) {
   try {
     const response = await fetch("http://127.0.0.1:8000/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      // FIX: se incluye celular que antes se descartaba silenciosamente
+   
       body: JSON.stringify({
         nombre: name,
         correo: email,
@@ -62,10 +56,6 @@ async function register(name, email, phone, password) {
 }
 
 
-// ======================
-// RECUPERAR CONTRASEÑA
-// FIX: función que antes no existía y causaba error en forgot-password.html
-// ======================
 
 async function forgotPassword(email) {
   try {
@@ -82,15 +72,13 @@ async function forgotPassword(email) {
     }
 
   } catch (error) {
-    // En modo prototipo sin backend activo, simplemente mostramos éxito visual
+  
     console.warn("Backend no disponible — modo prototipo:", error);
   }
 }
 
 
-// ======================
-// LOGOUT
-// ======================
+
 
 function logout() {
   localStorage.removeItem("token");
@@ -99,10 +87,7 @@ function logout() {
 }
 
 
-// ======================
-// AUTH GUARD
-// Protege páginas privadas y puebla el DOM con datos del usuario
-// ======================
+
 
 function requireAuth() {
   const token = localStorage.getItem("token");

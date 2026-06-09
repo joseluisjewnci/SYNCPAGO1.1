@@ -1,7 +1,3 @@
-// ============================
-// SYNCPAGO — HISTORIAL
-// Envuelto en IIFE para evitar conflicto de variables globales con gastos.js
-// ============================
 
 (function () {
 
@@ -44,7 +40,6 @@
       ? `<tr><td colspan="5" style="text-align:center;padding:24px;color:var(--gray-400)">No hay registros</td></tr>`
       : pagina.map(g => {
           const estado = getEstado(g);
-          // FIX: usa formatMoney() de utils.js que respeta la moneda seleccionada
           return `
           <tr ${!g.activo ? 'style="opacity:.6"' : ''}>
             <td><span class="service-cell">
@@ -78,7 +73,6 @@
     const texto     = (document.getElementById("hist-q")?.value     || "").toLowerCase();
     const categoria =  document.getElementById("hist-cat")?.value   || "";
     const estado    =  document.getElementById("hist-status")?.value || "";
-    // FIX: filtro de fechas que antes existía en el HTML pero nunca se aplicaba
     const desde     =  document.getElementById("hist-from")?.value  || "";
     const hasta     =  document.getElementById("hist-to")?.value    || "";
 
