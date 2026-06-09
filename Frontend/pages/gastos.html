@@ -19,7 +19,6 @@
     <div class="sidebar-logo" role="img" aria-label="SyncPago">SYNC<span>PAGO</span></div>
     <div class="sidebar-nav">
       <a class="nav-item" href="dashboard.html">🏠 Inicio</a>
-      <!-- FIX: enlace corregido de recibos.html → gastos.html -->
       <a class="nav-item active" href="gastos.html">📋 Mis Recibos</a>
       <a class="nav-item" href="recordatorios.html">🔔 Recordatorios</a>
       <a class="nav-item" href="insights.html">📊 Estadísticas</a>
@@ -66,10 +65,8 @@
         Todo recibo registrado puede ser editado en cualquier momento. Al eliminar, el registro se conserva en el historial.
       </div>
 
-      <!-- RF-021: Filtros -->
       <section aria-label="Filtros de búsqueda">
         <div class="table-toolbar">
-          <!-- RF-007: categoría -->
           <select class="filter-btn" id="filter-cat" onchange="filterGastos()"
                   aria-label="Filtrar por categoría">
             <option value="">☰ Todas las categorías</option>
