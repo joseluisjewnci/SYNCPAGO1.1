@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Título de la ventana</title>
+        <meta charset="utf-8">
+        <link rel="shorcut icon" href="img/favicon.ico "type="image/x-icon">
+        <link rel="stylesheet" href="css/styles.css">
+        <!-- {selector  propiedad:valor;} -->
+        <style>
+            h3  {color: #0747c0;}
+            h2#titulo_nivel_2 {color:#ff00ff;}
+            #titulo_nivel_2 {color:#6019bd;}
+            .nombre_estilo {color:#37aedd;}
+            .otro_estilo {font-style:italic;}
+        </style>
+</head>
+<body>
+    <!--comentario de 
+    una o varias líneas-->
+    <!--Elementos de bloque(tiene su propio espacio), línea-->
+    <!--CSS
+    busca hacer lamenor cantoidad de código posible para definir la presentación de las páginas web, es decir, el diseño, la apariencia, el formato, etc.
+    -->
+    <!-- etiquetas, class(.), id(#), pseudo-classes(:link, :visited, :hover, :active) -->
+    <!-- CASCADE STYLE SHEET: Inline, incrustados, vinculadas e importadas  -->
+    <!--inline -->
+        <h1 id="arriba" style="color:#0747c0;"> Encabezado </h1>Texto independiente
+        <h2 style="color:#37aedd;" > Encabezado </h2>Texto independiente
+    <!-- incrustadas -->
+        <h3> Encabezado </h3>Texto independiente
+        <h4 id="titulo_nivel_2"> Encabezado </h4>Texto independiente
+    <!-- class se usa muchas veces, id 1 -->
+        <h5 class="nombre_estilo otro_estilo"> Encabezado </h5>Texto independiente
+    <!-- vinculadas -->
+        <h6 class> Encabezado </h6>Texto independiente
+
+    <hr><!--línea horizontal(elemento vacío)-->
+        <p title="mensaje complementario">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea ratione dolorem eius veritatis praesentium a saepe incidunt, cumque blanditiis ab, tempora, exercitationem deleniti ducimus molestias illum suscipit quos beatae dolores?</p>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis consequuntur, perspiciatis deserunt accusamus reprehenderit <span> molestiae nostrum, possimus voluptates voluptatem commodi exercitationem blanditiis, alias vitae non officia</span> vero eum enim.</p>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+            <blockquote> Fuga reprehenderit cumque hic velit officiis,</blockquote>
+            consequatur minima maxime quia dolores sapiente veniam atque laudantium quo aspernatur <br>cupiditate, pariatur temporibus rem laborum.</p>
+    <hr><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> 
+        <a href="siempre_minuscula"><img src="img/juego_gambito_dama.jpg" alt="partida de ajedrez de gambito de dama"></a>
+        <br><br><br><br><br><br><br><br><br><br>
+        <br><br>
+    <!--elementos de línea, o frase(pueden estar dentro de texto de bloque, formato)-->
+        <span>Texto de línea</span>
+        <strong>Texto en negrita</strong>
+        <em>Texto en cursiva</em>
+        <mark style="background-color:#37aedd">Texto resaltado</mark>
+        <small>texto pequeño</small>
+        <sup>Texto super indice: 2</sup>
+        <sub>Texto subindice: H2O </sub><br>
+    <hr id="medio">
+    <!--links, enlaces o vínvulos-->
+    <!--links remotos-->
+        <a href="https://www.sena.edu.co" target="_parent"style="color: #2f92aa">link remoto</a><br>
+    <!--link de correo-->
+        <a title="clickea aquí" href="mailto:correo@sena.edu.co">Link correo</a><br>
+    <!--link anclado-->
+        <a href="#arriba">link anclado</a><br>
+    <!--link local-->
+        <a href="siempre_minuscula.html">Link local</a><br>
+    <!-- link con propiedades sin definir -->
+    <a href="#">propiedades de link</a>
+    <hr>
+    <!-- imagenes formato, JPG, GIF, PNG-->
+    <!-- resolución: cantida de pixeles que caben en una unidad de medida cuadrada(min 72px*inch) -->
+    <!-- dimensiones, resolución y formato -->
+        <a href="siempre_minuscula"><img src="img/juego_gambito_dama.jpg" alt="partida de ajedrez de gambito de dama"></a>
+    <hr>
+    <div>
+    texto de ejemplo
+    </div>
+    <hr>
+    <!-- Listas ordenadas, no ordenadas
+    definición -->
+        <ol type="I" start="5" reserved>
+            <li>Elemento</li>
+            <li>Elemento</li>
+            <li>Elemento</li>
+        </ol>
+        <ul type="circle">
+            <li>Element</li>
+        </ul>
+        <ul type="disc">
+            <li>Element</li>
+            <li>Element</li>
+        </ul>
+        <ul type="square">
+            <li>Element</li>
+            <li>Element</li>
+        </ul>
+        <ul>
+            <li>Element</li>
+            <ol>
+                <li>Element</li>
+                <li>Element</li>
+            </ol>
+            <li>Element</li>
+        </ul>
+
+        <ol>
+            <li>contenido de lista</li>
+            <li>contenido de lista</li>
+            <li>contenido de lista</li>
+            <li>contenido de lista</li>
+        </ol>
+    <table>
+        <tr>
+            <td>contenido</td>
+            <td>Contenido</td>
+        </tr>
+        <tr>
+            <td>Celda 1</td>
+            <td>Celda 2</td>
+        </tr>
+    </table>
+    <!-- definition list, ej: glosario
+    elemento v->   definición-->
+
+        <dl>
+            <dt>HTML</dt>
+            <dd>Lenguaje de marcado de etiquetas para desarrollar páginas web</dd>
+            <dt>CSS</dt>
+            <dd>Lenguaje de estilo para definir la presentación de las páginas web<dd>
+        </dl>
+    <hr>
+    <!-- tablas -->
+        <table border="1">
+    <!-- primero se definen las filas -->
+            <caption>Puntajes</caption>
+            <tr>
+                <th colspan="2" style="background-color:#6ecce9">Equipos</th>
+            </tr>
+            <tr style="background-color:#ff0000;color:white">
+                <td>Rojo</td>
+                <td>10</td>
+            </tr>
+            <tr style="background-color:#dfee5a">
+                <td>amarillo</td>
+                <td rowspan="2" style="background-color:rgb(28, 180, 23)">8</td>
+            </tr>
+            <tr style="background-color:#0747c0;color:#ffffff">
+                <td>azul</td>
+            </tr>
+            <th colspan="2" style="background-color:#6ecce9"><small>Puntos luego de 4 juegos</small></th>
+        </table>
+        <br>
+    <!-- iFrames -->
+    <!-- insertar vídeo -->
+        <iframe width="941" height="538" src="https://www.youtube.com/embed/qb8iDUeFYNU" title="Estás destruyendo tu capacidad de hacer cosas difíciles" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <!-- insertar mapa -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7364.206949379734!2d-74.07097426059906!3d4.613427157157906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f998484277acf%3A0x3bab23efae829923!2sMuseo%20Nacional%20de%20Colombia!5e0!3m2!1ses-419!2sco!4v1777325497199!5m2!1ses-419!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <!--iframe propio -->
+    <!-- el nombre funciona para cambiar el contenido de la iFrame-->
+        <iframe src="siempre_minuscula.html" frameborder="1" width="480" height="240" name="ventana">
+        </iframe>
+        <br>
+        <a href="https://www.sena.edu.co" target="ventana">Cambiar contenido del iFrame</a>
+        <br>
+    <!-- caractéres especiales -->
+        &aacute; &eacute;
+        &Aacute; &Eacute;
+        &ntilde; &Ntilde;
+        &amp; &lt; &gt;
+        &copy; &reg;
+        &nbsp;&nbsp;&nbsp;&spades;
+</body>
+</html>

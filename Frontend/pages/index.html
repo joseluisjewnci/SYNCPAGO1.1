@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYNCPAGO — Iniciar sesión</title>
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/auth.css">
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+<!-- RF-002: pantalla de login -->
+<div class="auth-screen">
+  <div class="auth-inner">
+
+    <header class="auth-logo" role="banner">
+      SYNC<span>PAGO</span>
+    </header>
+
+    <main>
+      <section class="auth-card" aria-label="Formulario de inicio de sesión">
+        <h1>Iniciar sesión</h1>
+
+        <!-- RF-002: correo -->
+        <div class="field-group" id="fg-email">
+          <span class="icon" aria-hidden="true">✉</span>
+          <input type="email" id="email" placeholder="Correo electrónico"
+                 autocomplete="email" aria-label="Correo electrónico">
+          <p class="field-error" role="alert">Ingresa un correo válido.</p>
+        </div>
+
+        <!-- RF-002: contraseña -->
+        <div class="field-group" id="fg-pass">
+          <span class="icon" aria-hidden="true">🔒</span>
+          <input type="password" id="password" placeholder="Contraseña"
+                 autocomplete="current-password" aria-label="Contraseña">
+          <p class="field-error" role="alert">La contraseña es obligatoria.</p>
+        </div>
+
+        <!-- RF-003: recuperar contraseña -->
+        <a class="forgot-link" href="forgot-password.html">¿Olvidaste tu contraseña?</a>
+
+        <button class="btn-primary" onclick="handleLogin()">Iniciar sesión</button>
+      </section>
+
+      <!-- RF-001: ir a registro -->
+      <p class="auth-link">
+        ¿No tienes cuenta? <a href="register.html">Regístrate</a>
+      </p>
+    </main>
+
+  </div>
+</div>
+
+<script src="../js/auth.js"></script>
+<script>
+  function handleLogin() {
+    const email    = document.getElementById("email");
+    const password = document.getElementById("password");
+    let valid = true;
+
+    const setErr = (id, cond) => {
+      document.getElementById(id).classList.toggle("error", cond);
+      if (cond) valid = false;
+    };
+
+    setErr("fg-email", !email.value || !email.value.includes("@"));
+    setErr("fg-pass",  !password.value);
+
+    if (valid) {
+    localStorage.setItem("token", "usuario-autenticado");
+    localStorage.setItem("user", JSON.stringify({
+        nombre: "Usuario de prueba",
+        correo: email.value
+    }));
+
+    window.location.href = "dashboard.html";
+}
+  }
+
+  // Permitir Enter para iniciar sesión
+  document.addEventListener("keydown", e => {
+    if (e.key === "Enter") handleLogin();
+  });
+</script>
+
+</body>
+</html>

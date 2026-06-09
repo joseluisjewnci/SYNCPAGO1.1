@@ -1,0 +1,30 @@
+RGB -> 0-255
+Red Green Blue
+0   0     0   = Negro
+255 255   255 = Blanco
+255 0     0   = Rojo 
+0   255   0   = Verde
+0   0     255 = Azul
+128 128   128 = Gris Medio
+255 128   0   = Naranja
+
+Hexadecimal -> 0-9 y A-F
+0 1 2 3 4 5 6 7 8 9 A B C D E F
+Red Green Blue
+# 00   00    00 = Negro     #000
+# FF   FF    FF = Blanco    #FFF
+# FF   00    00 = Rojo      #F00
+# 00   FF    00 = Verde
+# 00   00    FF = Azul
+# 80   80    80 = Gris Medio
+# FF   80    00 = Naranja
+
+Contenedores
+DIV
+SPAN
+
+cajas
+
+Margen
+Border
+Padding
