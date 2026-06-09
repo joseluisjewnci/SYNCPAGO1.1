@@ -1,9 +1,5 @@
 let toastTimer;
 
-// ====================
-// TOAST
-// ====================
-
 function showToast(msg) {
   const t = document.getElementById("toast");
   if (!t) return;
@@ -13,10 +9,6 @@ function showToast(msg) {
   toastTimer = setTimeout(() => t.classList.remove("show"), 3000);
 }
 
-
-// ====================
-// MONEDA
-// ====================
 
 const exchangeRates = { COP: 1, USD: 4000, EUR: 4500 };
 
@@ -42,9 +34,6 @@ function formatMoney(value) {
 }
 
 
-// ====================
-// FECHAS
-// ====================
 
 function formatDate(str) {
   return new Date(str + "T12:00:00").toLocaleDateString("es-CO", {

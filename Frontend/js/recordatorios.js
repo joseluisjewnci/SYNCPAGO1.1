@@ -1,8 +1,3 @@
-// ============================
-// SYNCPAGO — RECORDATORIOS
-// Antes este archivo estaba completamente vacío.
-// Ahora guarda y restaura las preferencias del usuario.
-// ============================
 
 function guardarPreferencias() {
   const wpRadio  = document.querySelector('input[name="wp"]:checked');
@@ -22,7 +17,6 @@ function guardarPreferencias() {
 function cargarPreferencias() {
   const prefs = JSON.parse(localStorage.getItem("prefs_recordatorios") || "{}");
 
-  // Restaurar WhatsApp
   if (typeof prefs.whatsapp !== "undefined") {
     document.querySelectorAll('input[name="wp"]').forEach(r => {
       const esAceptar = r.parentElement.textContent.includes("Aceptar");
@@ -30,7 +24,6 @@ function cargarPreferencias() {
     });
   }
 
-  // Restaurar Calendario
   if (typeof prefs.calendario !== "undefined") {
     document.querySelectorAll('input[name="cal"]').forEach(r => {
       const esAceptar = r.parentElement.textContent.includes("Aceptar");
@@ -38,14 +31,12 @@ function cargarPreferencias() {
     });
   }
 
-  // Restaurar antelación
   if (prefs.antelacion) {
     document.querySelectorAll(".ant-btn").forEach(btn => {
       btn.classList.toggle("active", btn.dataset.days === prefs.antelacion);
     });
   }
 
-  // Aplicar colores a radios ya cargados
   actualizarColoresRadios();
 }
 
@@ -74,7 +65,6 @@ function selectAnt(btn, days) {
 document.addEventListener("DOMContentLoaded", () => {
   cargarPreferencias();
 
-  // Guardar automáticamente al cambiar radios
   document.querySelectorAll('input[name="wp"], input[name="cal"]').forEach(r => {
     r.addEventListener("change", () => {
       actualizarColoresRadios();
@@ -82,7 +72,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Cargar lista de recibos en el selector del tab Mensaje
   const sel = document.getElementById("sel-gasto");
   if (sel) {
     const gastos = JSON.parse(localStorage.getItem("gastos") || "[]")

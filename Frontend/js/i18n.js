@@ -1,6 +1,3 @@
-// ====================
-// TRADUCCIONES RF-022
-// ====================
 
 const translations = {
   es: {
@@ -31,12 +28,9 @@ function getLang() {
   return localStorage.getItem("lang") || "es";
 }
 
-// FIX: firma corregida — el HTML llama setLang('es', this), el segundo arg era ignorado
-// Ahora también actualiza visualmente los botones activos
 function setLang(lang, btn) {
   localStorage.setItem("lang", lang);
 
-  // Actualizar botones activos si se pasa referencia
   if (btn) {
     document.querySelectorAll(".lang-btn").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
@@ -45,7 +39,6 @@ function setLang(lang, btn) {
   location.reload();
 }
 
-// Aplica traducciones a todos los elementos con [data-i18n]
 function applyTranslations() {
   const t = translations[getLang()];
   document.querySelectorAll("[data-i18n]").forEach(el => {
@@ -53,7 +46,6 @@ function applyTranslations() {
     if (t[key]) el.textContent = t[key];
   });
 
-  // Marcar botón de idioma activo
   document.querySelectorAll(".lang-btn").forEach(btn => {
     btn.classList.toggle("active", btn.textContent.trim().toLowerCase() === getLang());
   });
