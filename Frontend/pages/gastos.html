@@ -15,7 +15,6 @@
 
 <div class="app-layout">
 
-  <!-- ══ SIDEBAR ══ -->
   <nav class="sidebar" id="sidebar" aria-label="Menú principal">
     <div class="sidebar-logo" role="img" aria-label="SyncPago">SYNC<span>PAGO</span></div>
     <div class="sidebar-nav">
@@ -32,7 +31,6 @@
 
   <div class="main-wrap">
 
-    <!-- ══ TOPBAR ══ -->
     <header class="topbar" role="banner">
       <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Abrir menú">☰</button>
       <div class="search-bar" role="search">
@@ -57,7 +55,6 @@
       </div>
     </header>
 
-    <!-- ══ MAIN ══ -->
     <main class="content">
 
       <header class="page-header">
@@ -85,7 +82,6 @@
             <option value="Otro">📦 Otro</option>
           </select>
 
-          <!-- RF-023: estado -->
           <select class="filter-btn" id="filter-status" onchange="filterGastos()"
                   aria-label="Filtrar por estado">
             <option value="">Todos los estados</option>
@@ -103,7 +99,6 @@
         </div>
       </section>
 
-      <!-- RF-006 RF-007 RF-008 RF-009 RF-010 RF-011 RF-023 -->
       <section aria-label="Tabla de recibos">
         <table class="data-table" role="table">
           <thead>
@@ -118,7 +113,6 @@
             </tr>
           </thead>
           <tbody id="gastos-tbody">
-            <!-- Poblado por gastos.js -->
           </tbody>
         </table>
 
@@ -141,7 +135,6 @@
   </div>
 </div>
 
-<!-- ══ MODAL: NUEVO RECIBO RF-006 ══ -->
 <div class="modal-overlay" id="modal-nuevo" role="dialog" aria-modal="true" aria-label="Nuevo recibo">
   <div class="modal">
     <div class="modal-header">
@@ -201,7 +194,6 @@
   </div>
 </div>
 
-<!-- ══ MODAL: EDITAR RECIBO RF-008 ══ -->
 <div class="modal-overlay" id="modal-editar" role="dialog" aria-modal="true" aria-label="Editar recibo">
   <div class="modal">
     <div class="modal-header">
@@ -249,7 +241,6 @@
     </div>
     <div class="modal-footer">
       <button class="btn-save" onclick="saveEdit()">Guardar cambios</button>
-      <!-- RF-009: soft delete -->
       <button class="btn-danger" onclick="softDelete()">Eliminar</button>
     </div>
   </div>

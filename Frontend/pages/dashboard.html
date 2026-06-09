@@ -14,11 +14,9 @@
 </head>
 <body>
 
-<!-- RF-005: si no hay token → redirige a login (manejado en auth.js) -->
 
 <div class="app-layout">
 
-  <!-- ══ SIDEBAR ══ -->
   <nav class="sidebar" id="sidebar" aria-label="Menú principal">
     <div class="sidebar-logo" role="img" aria-label="SyncPago">SYNC<span>PAGO</span></div>
     <div class="sidebar-nav">
@@ -36,10 +34,8 @@
   </nav>
   <div class="sidebar-overlay" id="overlay" onclick="closeSidebar()"></div>
 
-  <!-- ══ CONTENIDO PRINCIPAL ══ -->
   <div class="main-wrap">
 
-    <!-- ══ TOPBAR ══ -->
     <header class="topbar" role="banner">
       <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Abrir menú">☰</button>
 
@@ -50,7 +46,6 @@
       </div>
 
       <div class="topbar-right">
-        <!-- RF-018: moneda -->
         <select class="currency-select" id="currency-sel"
                 onchange="setCurrency(this.value)" aria-label="Seleccionar moneda">
           <option value="COP">COP $</option>
@@ -58,7 +53,6 @@
           <option value="EUR">EUR €</option>
         </select>
 
-        <!-- RF-022: idioma -->
         <div class="lang-switcher" role="group" aria-label="Idioma">
           <button class="lang-btn" onclick="setLang('es', this)">ES</button>
           <button class="lang-btn" onclick="setLang('en', this)">EN</button>
@@ -73,7 +67,7 @@
           <div class="avatar" aria-hidden="true">👤</div>
           <span id="username-display">Usuario</span>
           <span aria-hidden="true">▾</span>
-          <!-- RF-004: cerrar sesión -->
+
           <div class="user-dropdown" id="user-dropdown" role="menu">
             <div class="dd-header">
               <div class="dd-avatar" aria-hidden="true">👤</div>
@@ -87,16 +81,13 @@
       </div>
     </header>
 
-    <!-- ══ MAIN ══ -->
     <main class="content" id="main-content">
 
-      <!-- RF-015: bienvenida -->
       <section class="welcome-banner" aria-label="Bienvenida">
         <h1>¡Te damos la bienvenida, <span id="welcome-name">Usuario</span>!</h1>
         <p>Aquí tienes un resumen de tus finanzas. Revisa tus próximos pagos y mantente al día.</p>
       </section>
 
-      <!-- RF-015: KPIs -->
       <section aria-label="Resumen financiero">
         <div class="kpi-grid">
           <article class="kpi-card">
@@ -122,7 +113,6 @@
         </div>
       </section>
 
-      <!-- Features -->
       <section aria-label="Funcionalidades principales">
         <div class="features-grid">
           <article class="feature-card">
@@ -192,12 +182,10 @@
     if (dd && menu && !menu.contains(e.target)) dd.classList.remove("open");
   });
 
-  // Sincronizar selector de moneda
   document.addEventListener("DOMContentLoaded", () => {
     const sel = document.getElementById("currency-sel");
     if (sel) sel.value = getCurrency();
 
-    // Badge de recordatorios con vencimientos próximos
     const gastos  = JSON.parse(localStorage.getItem("gastos") || "[]");
     const hoy     = new Date();
     const proximos = gastos.filter(g => {

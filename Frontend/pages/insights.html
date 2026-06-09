@@ -16,7 +16,6 @@
 
 <div class="app-layout">
 
-  <!-- ══ SIDEBAR ══ -->
   <nav class="sidebar" id="sidebar" aria-label="Menú principal">
     <div class="sidebar-logo" role="img" aria-label="SyncPago">SYNC<span>PAGO</span></div>
     <div class="sidebar-nav">
@@ -32,7 +31,6 @@
 
   <div class="main-wrap">
 
-    <!-- ══ TOPBAR ══ -->
     <header class="topbar" role="banner">
       <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Abrir menú">☰</button>
       <div class="search-bar" role="search">
@@ -40,7 +38,7 @@
         <input type="text" placeholder="Buscar..." aria-label="Buscar">
       </div>
       <div class="topbar-right">
-        <!-- RF-018 -->
+
         <select class="currency-select" id="currency-sel"
                 onchange="setCurrency(this.value)" aria-label="Moneda">
           <option value="COP">COP $</option>
@@ -63,7 +61,6 @@
       </div>
     </header>
 
-    <!-- ══ MAIN ══ -->
     <main class="content">
 
       <header class="page-header">
@@ -71,14 +68,12 @@
         <p>Analiza tus recibos mes a mes y toma mejores decisiones.</p>
       </header>
 
-      <!-- RF-016: navegación de meses -->
       <nav class="month-nav" aria-label="Navegación de meses">
         <button onclick="changeMonth(-1)" aria-label="Mes anterior">← Anterior</button>
         <span id="current-month" aria-live="polite">Cargando...</span>
         <button onclick="changeMonth(1)" aria-label="Mes siguiente">Siguiente →</button>
       </nav>
 
-      <!-- RF-016: resumen mensual -->
       <section class="chart-section" aria-label="Resumen del mes">
         <h2>Resumen del mes</h2>
         <div class="total-row">
@@ -99,7 +94,6 @@
         </div>
       </section>
 
-      <!-- RF-017: distribución por categoría — FIX: dinámico, no hardcodeado -->
       <section class="chart-section" aria-label="Distribución por categoría">
         <h2>📊 Distribución por categoría</h2>
         <div id="bars-container">
@@ -123,7 +117,6 @@
 <script>
   requireAuth();
 
-  // Colores por categoría
   const catColors = {
     "Vivienda":   "#3563e9",
     "Servicios":  "#22c55e",
@@ -139,7 +132,6 @@
 
   let currentDate = new Date();
 
-  // FIX: cargarInsights() usa datos reales de localStorage, no hardcodeados
   function cargarInsights() {
     const mes  = currentDate.getMonth();
     const anio = currentDate.getFullYear();
@@ -173,7 +165,6 @@
     set("ins-pending", formatMoney(Math.max(0, pendiente)));
     set("ins-overdue", formatMoney(vencidos));
 
-    // Barras por categoría
     const cats = {};
     delMes.forEach(g => {
       cats[g.categoria] = (cats[g.categoria] || 0) + g.monto;

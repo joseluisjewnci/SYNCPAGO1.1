@@ -11,7 +11,6 @@
 </head>
 <body>
 
-<!-- RF-002: pantalla de login -->
 <div class="auth-screen">
   <div class="auth-inner">
 
@@ -23,7 +22,6 @@
       <section class="auth-card" aria-label="Formulario de inicio de sesión">
         <h1>Iniciar sesión</h1>
 
-        <!-- RF-002: correo -->
         <div class="field-group" id="fg-email">
           <span class="icon" aria-hidden="true">✉</span>
           <input type="email" id="email" placeholder="Correo electrónico"
@@ -31,7 +29,6 @@
           <p class="field-error" role="alert">Ingresa un correo válido.</p>
         </div>
 
-        <!-- RF-002: contraseña -->
         <div class="field-group" id="fg-pass">
           <span class="icon" aria-hidden="true">🔒</span>
           <input type="password" id="password" placeholder="Contraseña"
@@ -39,13 +36,11 @@
           <p class="field-error" role="alert">La contraseña es obligatoria.</p>
         </div>
 
-        <!-- RF-003: recuperar contraseña -->
         <a class="forgot-link" href="forgot-password.html">¿Olvidaste tu contraseña?</a>
 
         <button class="btn-primary" onclick="handleLogin()">Iniciar sesión</button>
       </section>
 
-      <!-- RF-001: ir a registro -->
       <p class="auth-link">
         ¿No tienes cuenta? <a href="register.html">Regístrate</a>
       </p>
@@ -80,7 +75,6 @@
 }
   }
 
-  // Permitir Enter para iniciar sesión
   document.addEventListener("keydown", e => {
     if (e.key === "Enter") handleLogin();
   });

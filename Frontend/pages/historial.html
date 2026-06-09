@@ -15,7 +15,6 @@
 
 <div class="app-layout">
 
-  <!-- ══ SIDEBAR ══ -->
   <nav class="sidebar" id="sidebar" aria-label="Menú principal">
     <div class="sidebar-logo" role="img" aria-label="SyncPago">SYNC<span>PAGO</span></div>
     <div class="sidebar-nav">
@@ -31,7 +30,6 @@
 
   <div class="main-wrap">
 
-    <!-- ══ TOPBAR ══ -->
     <header class="topbar" role="banner">
       <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Abrir menú">☰</button>
       <div class="search-bar" role="search">
@@ -56,7 +54,6 @@
       </div>
     </header>
 
-    <!-- ══ MAIN ══ -->
     <main class="content">
 
       <header class="page-header">
@@ -64,7 +61,6 @@
         <p>Consulta el historial completo de tus recibos registrados.</p>
       </header>
 
-      <!-- RF-021: Filtros avanzados -->
       <section aria-label="Filtros de historial">
         <div class="table-toolbar">
           <select class="filter-btn" id="hist-status" onchange="filterHistorial()"
@@ -83,7 +79,6 @@
             <option>Educación</option><option>Ocio</option><option>Impuestos</option>
           </select>
 
-          <!-- RF-021: filtro de fechas — FIX: ahora sí se aplica en historial.js -->
           <input type="date" id="hist-from" onchange="filterHistorial()"
                  style="padding:7px 10px;border:1.5px solid var(--gray-200);border-radius:var(--radius-sm);font-size:0.82rem;color:var(--gray-700);background:white;"
                  aria-label="Fecha desde" title="Desde">
@@ -100,7 +95,6 @@
         </div>
       </section>
 
-      <!-- RF-019: tabla historial -->
       <section aria-label="Tabla de historial">
         <table class="data-table" role="table">
           <thead>
@@ -113,7 +107,7 @@
             </tr>
           </thead>
           <tbody id="hist-tbody">
-            <!-- Poblado por historial.js -->
+
           </tbody>
         </table>
 
