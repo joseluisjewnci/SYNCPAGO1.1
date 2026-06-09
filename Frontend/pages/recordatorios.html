@@ -37,7 +37,6 @@
     .radio-label.sel-green { border-color: var(--green); background: #dcfce7; color: #16a34a; }
     .radio-label.sel-red   { border-color: var(--red);   background: #fee2e2; color: #b91c1c; }
 
-    /* RF-014: antelación */
     .antelacion-grid { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
     .ant-btn {
       padding: 8px 16px;
@@ -64,7 +63,6 @@
 
 <div class="app-layout">
 
-  <!-- ══ SIDEBAR ══ -->
   <nav class="sidebar" id="sidebar" aria-label="Menú principal">
     <div class="sidebar-logo" role="img" aria-label="SyncPago">SYNC<span>PAGO</span></div>
     <div class="sidebar-nav">
@@ -80,7 +78,6 @@
 
   <div class="main-wrap">
 
-    <!-- ══ TOPBAR ══ -->
     <header class="topbar" role="banner">
       <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Abrir menú">☰</button>
       <div class="search-bar" role="search">
@@ -106,7 +103,6 @@
       </div>
     </header>
 
-    <!-- ══ MAIN ══ -->
     <main class="content">
 
       <header class="page-header">
@@ -114,7 +110,6 @@
         <p>Configura cómo y cuándo quieres recibir tus alertas de pago.</p>
       </header>
 
-      <!-- TABS -->
       <div class="tabs" role="tablist">
         <div class="tab active" role="tab" aria-selected="true"
              onclick="showTab('tab-permisos', this)">Recordatorio</div>
@@ -124,13 +119,11 @@
              onclick="showTab('tab-pagaste', this)">¿Lo pagaste?</div>
       </div>
 
-      <!-- ══ TAB 1: PERMISOS RF-012 RF-013 RF-014 ══ -->
       <section id="tab-permisos" role="tabpanel" aria-label="Configuración de recordatorios">
         <p style="font-size:0.88rem;color:var(--gray-500);margin-bottom:16px;">
           🔔 Activa las notificaciones para que te lleguen las alertas.
         </p>
 
-        <!-- WhatsApp RF-013 -->
         <article class="perm-card">
           <h3>💬 Autorización de notificaciones por WhatsApp</h3>
           <p>Para enviarte recordatorios necesitamos usar tu número y enviar mensajes vía WhatsApp.</p>
@@ -151,7 +144,6 @@
           </div>
         </article>
 
-        <!-- Calendario RF-012 -->
         <article class="perm-card">
           <h3>📅 Autorización para acceso al calendario</h3>
           <p>SYNCPAGO puede agregar recordatorios a tu calendario para ayudarte a organizar tus pagos.</p>
@@ -171,7 +163,6 @@
           </div>
         </article>
 
-        <!-- RF-014: antelación -->
         <article class="perm-card">
           <h3>⏰ Antelación de alertas</h3>
           <p>¿Con cuántos días de anticipación deseas recibir el recordatorio de pago?</p>
@@ -184,7 +175,6 @@
         </article>
       </section>
 
-      <!-- ══ TAB 2: MENSAJE RF-013 ══ -->
       <section id="tab-mensaje" class="hidden" role="tabpanel" aria-label="Mensaje de notificación">
 
         <div class="form-field" style="max-width:320px;margin-bottom:16px;">
@@ -221,7 +211,6 @@
         </article>
       </section>
 
-      <!-- ══ TAB 3: ¿LO PAGASTE? ══ -->
       <section id="tab-pagaste" class="hidden" role="tabpanel" aria-label="Confirmar pago">
         <article class="perm-card">
           <h3>✅ Confirmar pago</h3>
