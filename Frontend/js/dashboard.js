@@ -30,6 +30,4 @@ document.addEventListener("DOMContentLoaded", () => {
   set("kpi-pending", pendientes);
   set("kpi-overdue", vencidos);
 
-  const sel = document.getElementById("currency-sel");
-  if (sel) sel.value = getCurrency();
 });

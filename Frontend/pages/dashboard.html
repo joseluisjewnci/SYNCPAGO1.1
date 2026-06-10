@@ -46,13 +46,6 @@
       </div>
 
       <div class="topbar-right">
-        <select class="currency-select" id="currency-sel"
-                onchange="setCurrency(this.value)" aria-label="Seleccionar moneda">
-          <option value="COP">COP $</option>
-          <option value="USD">USD $</option>
-          <option value="EUR">EUR €</option>
-        </select>
-
         <div class="lang-switcher" role="group" aria-label="Idioma">
           <button class="lang-btn" onclick="setLang('es', this)">ES</button>
           <button class="lang-btn" onclick="setLang('en', this)">EN</button>
@@ -183,8 +176,6 @@
   });
 
   document.addEventListener("DOMContentLoaded", () => {
-    const sel = document.getElementById("currency-sel");
-    if (sel) sel.value = getCurrency();
 
     const gastos  = JSON.parse(localStorage.getItem("gastos") || "[]");
     const hoy     = new Date();
