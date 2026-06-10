@@ -1,6 +1,4 @@
-/* ── dashboard.css — Cards de resumen, gráficos, insights ── */
 
-/* ══ KPI CARDS RF-015 ══ */
 .kpi-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -38,7 +36,6 @@
   margin-top: 4px;
 }
 
-/* ══ BIENVENIDA RF-015 ══ */
 .welcome-banner {
   background: var(--blue-dark);
   color: var(--white);
@@ -58,7 +55,6 @@
   max-width: 540px;
 }
 
-/* ══ FEATURES GRID ══ */
 .features-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -86,7 +82,6 @@
 }
 .feature-card p { font-size: 0.82rem; color: var(--gray-500); line-height: 1.5; }
 
-/* ══ CHART SECTION RF-017 ══ */
 .chart-section {
   background: var(--white);
   border-radius: var(--radius);
@@ -102,7 +97,6 @@
   margin-bottom: 16px;
 }
 
-/* ══ NAVEGACIÓN DE MES RF-016 ══ */
 .month-nav {
   display: flex;
   align-items: center;
@@ -127,7 +121,6 @@
   color: var(--gray-900);
 }
 
-/* ══ BARRAS DE DISTRIBUCIÓN RF-017 ══ */
 .bar-item { margin-bottom: 14px; }
 .bar-label {
   display: flex;
@@ -149,7 +142,6 @@
   transition: width 0.5s ease;
 }
 
-/* ══ TOTALES RF-016 ══ */
 .total-row {
   display: flex;
   justify-content: space-between;

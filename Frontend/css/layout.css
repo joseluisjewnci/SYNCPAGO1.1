@@ -1,11 +1,10 @@
-/* ── layout.css — Sidebar, Topbar, Contenido ── */
+
 
 .app-layout {
   display: flex;
   min-height: 100vh;
 }
 
-/* ── SIDEBAR ── */
 .sidebar {
   width: var(--sidebar-w);
   min-height: 100vh;
@@ -70,7 +69,6 @@
 }
 .nav-btn-add:hover { background: var(--green-dark); }
 
-/* ── MAIN ── */
 .main-wrap {
   margin-left: var(--sidebar-w);
   flex: 1;
@@ -79,7 +77,6 @@
   min-height: 100vh;
 }
 
-/* ── TOPBAR ── */
 .topbar {
   height: var(--header-h);
   background: var(--blue-dark);
@@ -113,7 +110,6 @@
 .search-bar input::placeholder { color: rgba(255,255,255,0.5); }
 .search-icon { color: rgba(255,255,255,0.5); font-size: 0.85rem; }
 
-/* RF-022 */
 .lang-switcher {
   display: flex;
   align-items: center;
@@ -133,7 +129,6 @@
 .lang-btn.active              { background: var(--white); color: var(--blue-dark); }
 .lang-btn:hover:not(.active)  { color: var(--white); }
 
-/* RF-018 */
 .currency-select {
   background: rgba(255,255,255,0.12);
   border: none;
@@ -194,7 +189,6 @@
 }
 .user-dropdown.open { display: block; }
 
-/* FIX: dd-header con flexbox column para orden correcto avatar→nombre→correo */
 .dd-header {
   padding: 12px 16px;
   border-bottom: 1px solid var(--gray-100);
@@ -228,7 +222,6 @@
 .dd-item.manage { color: var(--blue-mid); font-weight: 600; }
 .dd-item.logout { color: var(--red); }
 
-/* ── CONTENT ── */
 .content {
   flex: 1;
   padding: 28px;
